@@ -92,14 +92,38 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+
+      <!-- 横向排列的三张GIF -->
+      <div class="columns is-centered is-vcentered">
+
+        <div class="column is-one-third has-text-centered">
+          <img src="static/gifs/2021dnds.gif" 
+               alt="2021 DNDS Training"
+               style="max-width: 100%; height: auto; border-radius: 8px;">
+          <p class="subtitle is-6" style="margin-top: 0.5rem;">Sample Game Scene 1</p>
+        </div>
+
+        <div class="column is-one-third has-text-centered">
+          <img src="static/gifs/bomberland-preview.gif" 
+               alt="Bomberland Preview"
+               style="max-width: 100%; height: auto; border-radius: 8px;">
+          <p class="subtitle is-6" style="margin-top: 0.5rem;">Sample Game Scene 2</p>
+        </div>
+
+        <div class="column is-one-third has-text-centered">
+          <img src="static/gifs/bomberland.gif" 
+               alt="Bomberland Training"
+               style="max-width: 100%; height: auto; border-radius: 8px;">
+          <p class="subtitle is-6" style="margin-top: 0.5rem;">Sample Game Scene 3</p>
+        </div>
+
+      </div>
+
+      <!-- 整体一句话总结 -->
+      <h2 class="subtitle has-text-centered" style="margin-top: 2rem;">
+        Learned behaviors emerging from attention-based multi-agent self-play training.
       </h2>
+
     </div>
   </div>
 </section>
@@ -113,7 +137,13 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            We present a multi-agent reinforcement learning (MARL) framework for coordinated battles in the Bomberland environment, inspired by the classic Bomberman game. 
+            Our agents encode observations — including teammates, opponents, bombs, and power-ups — into dynamic entity embeddings. 
+            Policy networks leverage masked self-attention to enable inter-agent information exchange, and temporal dependencies are captured using LSTM layers. 
+            The policies are optimized via Proximal Policy Optimization (PPO) with Generalized Advantage Estimation (GAE). 
+            To promote strategic evolution, we implement self-play training against periodic snapshots of previous policies. 
+            Our system is deployed within an adapted Docker + Gym environment, facilitating scalable experimentation. 
+            Empirical results demonstrate emergent coordination and effective strategies evolving over time.
           </p>
         </div>
       </div>
@@ -222,28 +252,18 @@
 
 
 
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
-
-
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
+      <pre><code>
+        @misc{ddrl_bomberland_project,
+          title={Multi-Agent Reinforcement Learning for Bomberland Game},
+          author={Chenmeinian Guo and Huhua Xiao},
+          year={2025},
+          note={Course Project at New York University (CSCI-GA 3033 DDRL)}
+        }
+        </code></pre>        
     </div>
 </section>
 <!--End BibTex citation -->
@@ -257,7 +277,7 @@
 
           <p>
             This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
 
