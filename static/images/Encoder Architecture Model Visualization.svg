@@ -1,0 +1,67 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="400" fill="white"/>
+  
+  <!-- Input Layer -->
+  <rect x="50" y="100" width="120" height="80" rx="5" ry="5" fill="#E6F3FF" stroke="black" stroke-width="1.5"/>
+  <text x="110" y="145" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Map (CNN)</text>
+  
+  <rect x="50" y="220" width="120" height="80" rx="5" ry="5" fill="#FFE6E6" stroke="black" stroke-width="1.5"/>
+  <text x="110" y="265" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Self-State (FC)</text>
+  
+  <!-- Concatenation -->
+  <rect x="250" y="160" width="140" height="80" rx="5" ry="5" fill="#F0F0F0" stroke="black" stroke-width="1.5"/>
+  <text x="320" y="205" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Concatenate Features</text>
+  
+  <!-- Processing Layers -->
+  <rect x="450" y="160" width="140" height="80" rx="5" ry="5" fill="#E6FFE6" stroke="black" stroke-width="1.5"/>
+  <text x="520" y="205" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">MLP Unit Encoder</text>
+  
+  <rect x="650" y="160" width="140" height="80" rx="5" ry="5" fill="#E6FFFF" stroke="black" stroke-width="1.5"/>
+  <text x="720" y="205" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Masked Self-Attention</text>
+  
+  <rect x="850" y="160" width="140" height="80" rx="5" ry="5" fill="#F2E6FF" stroke="black" stroke-width="1.5"/>
+  <text x="920" y="193" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">LSTM</text>
+  <text x="920" y="213" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">(Temporal Model)</text>
+  
+  <!-- Output Layer -->
+  <rect x="1050" y="160" width="100" height="80" rx="5" ry="5" fill="#FFF2E6" stroke="black" stroke-width="1.5"/>
+  <text x="1100" y="205" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">Policy Head</text>
+  
+  <!-- Action Outputs -->
+  <rect x="1000" y="300" width="60" height="60" rx="5" ry="5" fill="#FFE6CC" stroke="black" stroke-width="1.5"/>
+  <text x="1030" y="335" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Action</text>
+  
+  <rect x="1070" y="300" width="60" height="60" rx="5" ry="5" fill="#FFE6CC" stroke="black" stroke-width="1.5"/>
+  <text x="1100" y="335" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Action</text>
+  
+  <rect x="1140" y="300" width="60" height="60" rx="5" ry="5" fill="#FFE6CC" stroke="black" stroke-width="1.5"/>
+  <text x="1170" y="335" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Action</text>
+  
+  <!-- Arrows -->
+  <!-- From inputs to concatenation -->
+  <path d="M 170 140 L 250 180" stroke="black" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 170 260 L 250 220" stroke="black" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Processing flow -->
+  <path d="M 390 200 L 450 200" stroke="black" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 590 200 L 650 200" stroke="black" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 790 200 L 850 200" stroke="black" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 990 200 L 1050 200" stroke="black" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- From policy head to actions -->
+  <path d="M 1100 240 L 1100 280" stroke="black" stroke-width="1.5" fill="none"/>
+  <path d="M 1100 280 L 1030 280 L 1030 300" stroke="black" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 1100 280 L 1100 300" stroke="black" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 1100 280 L 1170 280 L 1170 300" stroke="black" stroke-width="1.5" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Title -->
+  <text x="600" y="50" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle">Model Architecture</text>
+  
+  <!-- Arrow Definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+    </marker>
+  </defs>
+</svg>

@@ -153,44 +153,37 @@
 <!-- End paper abstract -->
 
 
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
+<!-- Model architecture section -->
+<section class="section">
+  <div class="container" style="max-width: 800px;">
+    <h1 class="title has-text-centered">Model Architecture and Design</h1>
+
+    <p style="margin-top: 2rem;">
+      Our model integrates environmental perception and agent-specific information through a modular design, consisting of the following components:
+    </p>
+
+    <figure class="image" style="text-align: center; margin: 2rem 0;">
+      <img src="static/images/Encoder Architecture Model Visualization.svg" alt="Model Architecture" style="max-width: 100%; display: inline-block;">
+      <figcaption style="margin-top: 1rem; font-style: italic; color: gray;">Figure 1: Overview of the model architecture.</figcaption>
+    </figure>
+
+    <p><strong>Feature Extractor (CNN):</strong> Extracts high-level spatial features from environmental maps, identifying obstacles, goals, and traversable regions.</p>
+
+    <p><strong>Self-State Encoder (FC Layer):</strong> Encodes each agent's self-state, including position, velocity, and health status, into a compact representation.</p>
+
+    <p><strong>Multi-Modal Fusion and Attention:</strong> Concatenates spatial features and agent states, passes them through an MLP, and applies masked self-attention to model feature interactions dynamically.</p>
+
+    <p><strong>Temporal Modeling (LSTM):</strong> Captures sequential dependencies across time steps, enabling historical context awareness for better decision-making.</p>
+
+    <p><strong>Policy Head:</strong> Outputs action probabilities based on the processed features, supporting adaptive and context-aware behavior.</p>
+
+    <p style="margin-top: 2rem;">
+      This streamlined architecture enables robust, flexible multi-agent behavior by combining spatial perception, self-awareness, feature interaction, and temporal reasoning.
+    </p>
   </div>
-</div>
-</div>
 </section>
-<!-- End image carousel -->
+<!-- End model architecture section -->
+
 
 
 
