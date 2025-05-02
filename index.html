@@ -74,237 +74,254 @@
                       <i class="fab fa-github"></i>
                     </span>
                     <span>Code</span>
+                    </a>
+                  </span>
                   </a>
                 </span>
-
-                </a>
-              </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
+  <!-- Teaser video-->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
 
-      <!-- 横向排列的三张GIF -->
-      <div class="columns is-centered is-vcentered">
+        <!-- 横向排列的三张GIF -->
+        <div class="columns is-centered is-vcentered">
 
-        <div class="column is-one-third has-text-centered">
-          <img src="static/gifs/2021dnds.gif" 
-               alt="2021 DNDS Training"
-               style="max-width: 100%; height: auto; border-radius: 8px;">
-          <p class="subtitle is-6" style="margin-top: 0.5rem;">Sample Game Scene 1</p>
+          <div class="column is-one-third has-text-centered">
+            <img src="static/gifs/2021dnds.gif" 
+                alt="2021 DNDS Training"
+                style="max-width: 100%; height: auto; border-radius: 8px;">
+            <p class="subtitle is-6" style="margin-top: 0.5rem;">Sample Game Scene 1</p>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <img src="static/gifs/bomberland-preview.gif" 
+                alt="Bomberland Preview"
+                style="max-width: 100%; height: auto; border-radius: 8px;">
+            <p class="subtitle is-6" style="margin-top: 0.5rem;">Sample Game Scene 2</p>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <img src="static/gifs/bomberland.gif" 
+                alt="Bomberland Training"
+                style="max-width: 100%; height: auto; border-radius: 8px;">
+            <p class="subtitle is-6" style="margin-top: 0.5rem;">Sample Game Scene 3</p>
+          </div>
+
         </div>
 
-        <div class="column is-one-third has-text-centered">
-          <img src="static/gifs/bomberland-preview.gif" 
-               alt="Bomberland Preview"
-               style="max-width: 100%; height: auto; border-radius: 8px;">
-          <p class="subtitle is-6" style="margin-top: 0.5rem;">Sample Game Scene 2</p>
-        </div>
-
-        <div class="column is-one-third has-text-centered">
-          <img src="static/gifs/bomberland.gif" 
-               alt="Bomberland Training"
-               style="max-width: 100%; height: auto; border-radius: 8px;">
-          <p class="subtitle is-6" style="margin-top: 0.5rem;">Sample Game Scene 3</p>
-        </div>
+        <!-- 整体一句话总结 -->
+        <h2 class="subtitle has-text-centered" style="margin-top: 2rem;">
+          Learned behaviors emerging from attention-based multi-agent self-play training.
+        </h2>
 
       </div>
-
-      <!-- 整体一句话总结 -->
-      <h2 class="subtitle has-text-centered" style="margin-top: 2rem;">
-        Learned behaviors emerging from attention-based multi-agent self-play training.
-      </h2>
-
     </div>
-  </div>
-</section>
-<!-- End teaser video -->
+  </section>
+  <!-- End teaser video -->
 
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Inspired by the <a href="https://www.gocoder.one/bomberland/" target="_blank">Bomberland Coder competition</a>, we developed a multi-agent reinforcement learning system for coordinated 3v3 battles in a variant of the classic Bomberman environment.
+              Our agents encode observations — including teammates, opponents, inventory, power-ups, and more — into dynamic entity embeddings.
+              To enable inter-agent coordination, policy networks apply self-attention and positional encoding over units.
+              We explored two model variants: one processes agent trajectories as time-series via attention-based temporal modeling, and the other uses standard per-frame inference without temporal concatenation.
+              Policies are trained with Proximal Policy Optimization (PPO) and Generalized Advantage Estimation (GAE).
+              We further adopt self-play training against periodically frozen policy snapshots to encourage strategic progression.
+              The system is deployed within a Docker + Gym environment provided by <a href="https://www.gocoder.one/bomberland/" target="_blank">Coder One</a> to support scalable multi-agent experiments.
+              Training is still ongoing...
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Motivation</h2>
+
+      <div class="columns is-vcentered">
+        <div class="column is-half">
+          <figure class="image">
+            <img src="static/images/robot-handover.png" alt="Robots cooperating">
+          </figure>
+          
+        </div>
+        <div class="column is-half content">
+          <p>Real-world systems often need multiple agents to work together.</p>
           <p>
-            Inspired by the <a href="https://www.gocoder.one/bomberland/" target="_blank">Bomberland Coder competition</a>, we developed a multi-agent reinforcement learning system for coordinated 3v3 battles in a variant of the classic Bomberman environment.
-            Our agents encode observations — including teammates, opponents, inventory, power-ups, and more — into dynamic entity embeddings.
-            To enable inter-agent coordination, policy networks apply self-attention and positional encoding over units.
-            We explored two model variants: one processes agent trajectories as time-series via attention-based temporal modeling, and the other uses standard per-frame inference without temporal concatenation.
-            Policies are trained with Proximal Policy Optimization (PPO) and Generalized Advantage Estimation (GAE).
-            We further adopt self-play training against periodically frozen policy snapshots to encourage strategic progression.
-            The system is deployed within a Docker + Gym environment provided by <a href="https://www.gocoder.one/bomberland/" target="_blank">Coder One</a> to support scalable multi-agent experiments.
-            Training is still ongoing...
+            <strong>Bomberland</strong> is a multi-agent game where agents must survive, place bombs, and ideally coordinate actions in real-time.
           </p>
+          <p><strong>Challenges in this project include:</strong></p>
+          <ul>
+            <li><strong>Partial observability:</strong> Agents cannot access info like teammate inventory or bomb cooldowns.</li>
+            <li><strong>Shared components:</strong> All three units share a max of 3 bombs.</li>
+            <li><strong>Delayed consequences:</strong> Bombs explode after a delay, requiring strategic planning.</li>
+            <li><strong>Dynamic environment:</strong> Map evolves over time (e.g., shrinking zones in late game).</li>
+          </ul>
+          
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- End paper abstract -->
+  </section>
 
 
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Motivation</h2>
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Idea Inspiration</h2>
 
-    <div class="columns is-vcentered">
-      <div class="column is-half">
-        <figure class="image">
-          <img src="static/images/robot-handover.png" alt="Robots cooperating">
-        </figure>
-        
+      <div class="columns">
+        <div class="column is-half">
+          <figure class="image is-4by3">
+            <img src="static/gifs/hide-and-seek-openai.gif" alt="Hide and Seek Simulation">
+            <figcaption class="has-text-centered" style="font-style: italic;">OpenAI's Hide and Seek environment</figcaption>
+          </figure>
+        </div>
+        <div class="column is-half">
+          <figure class="image">
+            <img src="static/images/openai-architecture.png" alt="openai-architecture">
+            <figcaption class="has-text-centered" style="font-style: italic;">Entity-wise attention and LSTM design</figcaption>
+          </figure>
+        </div>
       </div>
-      <div class="column is-half content">
-        <p>Real-world systems often need multiple agents to work together.</p>
-        <p>
-          <strong>Bomberland</strong> is a multi-agent game where agents must survive, place bombs, and ideally coordinate actions in real-time.
-        </p>
-        <p><strong>Challenges in this project include:</strong></p>
+
+      <div class="content" style="margin-top: 1rem;">
+        <p>Our model structure design was inspired by OpenAI's Hide and Seek Project. We apply:</p>
         <ul>
-          <li><strong>Partial observability:</strong> Agents cannot access info like teammate inventory or bomb cooldowns.</li>
-          <li><strong>Shared components:</strong> All three units share a max of 3 bombs.</li>
-          <li><strong>Delayed consequences:</strong> Bombs explode after a delay, requiring strategic planning.</li>
-          <li><strong>Dynamic environment:</strong> Map evolves over time (e.g., shrinking zones in late game).</li>
+          <li>Entity embeddings for agents, bombs, and obstacles</li>
+          <li>Attention over agents</li>
+          <li>temporal modeling</li>
         </ul>
-        
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Idea Inspiration</h2>
+  <!-- Model architecture section -->
+  <section class="section">
+    <div class="container" style="max-width: 800px;">
+      <h1 class="title has-text-centered">Model Architecture and Design</h1>
 
-    <div class="columns">
-      <div class="column is-half">
-        <figure class="image is-4by3">
-          <img src="static/gifs/hide-and-seek-openai.gif" alt="Hide and Seek Simulation">
-          <figcaption class="has-text-centered" style="font-style: italic;">OpenAI's Hide and Seek environment</figcaption>
-        </figure>
-      </div>
-      <div class="column is-half">
-        <figure class="image">
-          <img src="static/images/openai-architecture.png" alt="openai-architecture">
-          <figcaption class="has-text-centered" style="font-style: italic;">Entity-wise attention and LSTM design</figcaption>
-        </figure>
-      </div>
-    </div>
+      <p style="margin-top: 2rem;">
+        We design two model variants to explore the effect of temporal information in multi-agent coordination:
+      </p>
 
-    <div class="content" style="margin-top: 1rem;">
-      <p>Our model structure design was inspired by OpenAI's Hide and Seek Project. We apply:</p>
+      <h2 class="subtitle is-4" style="margin-top: 2rem;">Model A: Attention-based Temporal Modeling</h2>
+      <p>
+        This variant treats a window of recent frames as a temporal sequence. For each unit, we concatenate its feature representations across multiple time steps and apply self-attention across the full sequence. Temporal position encoding is added to retain ordering.
+      </p>
+
+      <figure class="image" style="text-align: center; margin: 1.5rem 0;">
+        <img src="static/images/temporal_attention_architecture.png" alt="Temporal Attention Model" style="max-width: 100%; display: inline-block;">
+        <figcaption style="margin-top: 1rem; font-style: italic; color: gray;">Figure 1: Attention-based temporal architecture with sequence modeling.</figcaption>
+      </figure>
+
+      <p><strong>Key modules:</strong></p>
       <ul>
-        <li>Entity embeddings for agents, bombs, and obstacles</li>
-        <li>Attention over agents</li>
-        <li>temporal modeling</li>
+        <li><strong>CNN:</strong> Extracts spatial features from map observations.</li>
+        <li><strong>FC Encoder:</strong> Encodes unit states (e.g., position, inventory).</li>
+        <li><strong>Temporal Concatenation:</strong> Combines features from previous <i>T</i> steps.</li>
+        <li><strong>Masked Self-Attention:</strong> Enables context-aware interactions across entities and time.</li>
+        <li><strong>Policy Head:</strong> Outputs action logits for each unit.</li>
       </ul>
+
+      <h2 class="subtitle is-4" style="margin-top: 3rem;">Model B: Per-frame Inference (No Time Window)</h2>
+      <p>
+        This simpler variant processes each frame independently. It uses a similar feature encoding pipeline but does not aggregate over time. It relies solely on current frame information, allowing for faster training and fewer parameters.
+      </p>
+
+      <figure class="image" style="text-align: center; margin: 1.5rem 0;">
+        <img src="static/images/per_frame_architecture.png" alt="Per-frame Model" style="max-width: 100%; display: inline-block;">
+        <figcaption style="margin-top: 1rem; font-style: italic; color: gray;">Figure 2: Per-frame architecture without temporal modeling.</figcaption>
+      </figure>
+
+      <p>
+        While lacking explicit memory, this model still supports coordination through self-attention over visible entities and positional encoding of units.
+      </p>
+
+      <p style="margin-top: 2rem;">
+        Comparing the two variants allows us to evaluate the impact of temporal modeling versus simplicity in multi-agent coordination tasks.
+      </p>
     </div>
-  </div>
-</section>
+  </section>
+  <!-- End model architecture section -->
 
 
+  <!-- Training results section --> 
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Results and Training Insights</h2>
 
-<!-- Model architecture section -->
-<section class="section">
-  <div class="container" style="max-width: 800px;">
-    <h1 class="title has-text-centered">Model Architecture and Design</h1>
+      <div class="columns is-vcentered">
+        <div class="column is-half content">
+          <h4 class="title is-4">Model #1: With Time Window</h4>
+          <ul>
+            <li>Trained for ~4000 episodes</li>
+            <li>Performance: Poor</li>
+            <li>Agents bomb destructible blocks but often self-destruct</li>
+            <li>Docker environment slowed training significantly</li>
+          </ul>
 
-    <p style="margin-top: 2rem;">
-      We design two model variants to explore the effect of temporal information in multi-agent coordination:
-    </p>
+          <h4 class="title is-4">Model #2: Without Time Window</h4>
+          <ul>
+            <li>Trained for ~2000 episodes</li>
+            <li>More stable behavior, shows signs of structured strategy</li>
+            <li>Still under training</li>
+          </ul>
 
-    <h2 class="subtitle is-4" style="margin-top: 2rem;">Model A: Attention-based Temporal Modeling</h2>
-    <p>
-      This variant treats a window of recent frames as a temporal sequence. For each unit, we concatenate its feature representations across multiple time steps and apply self-attention across the full sequence. Temporal position encoding is added to retain ordering.
-    </p>
+          <p><strong>Note:</strong> Other architectures were also tried. These two show the most promise so far.</p>
+        </div>
 
-    <figure class="image" style="text-align: center; margin: 1.5rem 0;">
-      <img src="static/images/temporal_attention_architecture.png" alt="Temporal Attention Model" style="max-width: 100%; display: inline-block;">
-      <figcaption style="margin-top: 1rem; font-style: italic; color: gray;">Figure 1: Attention-based temporal architecture with sequence modeling.</figcaption>
-    </figure>
-
-    <p><strong>Key modules:</strong></p>
-    <ul>
-      <li><strong>CNN:</strong> Extracts spatial features from map observations.</li>
-      <li><strong>FC Encoder:</strong> Encodes unit states (e.g., position, inventory).</li>
-      <li><strong>Temporal Concatenation:</strong> Combines features from previous <i>T</i> steps.</li>
-      <li><strong>Masked Self-Attention:</strong> Enables context-aware interactions across entities and time.</li>
-      <li><strong>Policy Head:</strong> Outputs action logits for each unit.</li>
-    </ul>
-
-    <h2 class="subtitle is-4" style="margin-top: 3rem;">Model B: Per-frame Inference (No Time Window)</h2>
-    <p>
-      This simpler variant processes each frame independently. It uses a similar feature encoding pipeline but does not aggregate over time. It relies solely on current frame information, allowing for faster training and fewer parameters.
-    </p>
-
-    <figure class="image" style="text-align: center; margin: 1.5rem 0;">
-      <img src="static/images/per_frame_architecture.png" alt="Per-frame Model" style="max-width: 100%; display: inline-block;">
-      <figcaption style="margin-top: 1rem; font-style: italic; color: gray;">Figure 2: Per-frame architecture without temporal modeling.</figcaption>
-    </figure>
-
-    <p>
-      While lacking explicit memory, this model still supports coordination through self-attention over visible entities and positional encoding of units.
-    </p>
-
-    <p style="margin-top: 2rem;">
-      Comparing the two variants allows us to evaluate the impact of temporal modeling versus simplicity in multi-agent coordination tasks.
-    </p>
-  </div>
-</section>
-<!-- End model architecture section -->
-
-
-
-<section class="section">
-  <div class="container is-max-desktop">
-    <h2 class="title is-3 has-text-centered">Results and Training Insights</h2>
-
-    <div class="columns is-vcentered">
-      <div class="column is-half content">
-        <h4 class="title is-4">Model #1: With Time Window</h4>
-        <ul>
-          <li>Trained for ~4000 episodes</li>
-          <li>Performance: Poor</li>
-          <li>Agents bomb destructible blocks but often self-destruct</li>
-          <li>Docker environment slowed training significantly</li>
-        </ul>
-
-        <h4 class="title is-4">Model #2: Without Time Window</h4>
-        <ul>
-          <li>Trained for ~2000 episodes</li>
-          <li>More stable behavior, shows signs of structured strategy</li>
-          <li>Still under training</li>
-        </ul>
-
-        <p><strong>Note:</strong> Other architectures were also tried. These two show the most promise so far.</p>
-      </div>
-
-      <div class="column is-half">
-        <figure class="image">
-          <img src="static/images/ppo-loss-function.png" alt="PPO Loss function">
-          <figcaption class="has-text-centered" style="font-style: italic;">Loss components used in PPO</figcaption>
-        </figure>
+        <div class="column is-half">
+          <figure class="image">
+            <img src="static/images/ppo-loss-function.png" alt="PPO Loss function">
+            <figcaption class="has-text-centered" style="font-style: italic;">Loss components used in PPO</figcaption>
+          </figure>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
 
+  <!-- Demo video section -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Demo Video</h2>
+      <div class="columns is-centered">
+        <div class="column is-three-quarters has-text-centered">
+          <video controls style="max-width: 100%; border-radius: 8px;">
+            <source src="static/videos/v3.mov" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="subtitle is-6" style="margin-top: 1rem;">This is an early-stage demo of Model #2 agents. The model is still under training and will continue to improve.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- References section -->
   <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
